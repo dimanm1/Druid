@@ -637,6 +637,36 @@ namespace Druid
         }
 
         /// <summary>
+        /// Загружает дерево из списка указанного списка. Узлы загружаемого дерева должны быть правильными.
+        /// </summary>
+        /// <param name="treeNodes">Список узлов загружаемого дерева.</param>
+        /// <returns>Этот узел.</returns>
+        public Node Load(IEnumerable<Node> treeNodes)
+        {
+            List<Node> newDescendants = treeNodes.ToList();
+            newDescendants.Sort(new NodeComparerAddress());
+
+
+            Node root = newDescendants[0];
+
+            foreach (Node newChild in newDescendants.Skip(0))
+            {
+                Node newParent = root.Find(newChild.address
+                    .Take(newChild.Level)
+                    .ToArray());
+
+                if (newParent == null)
+                {
+                    continue;
+                }
+
+                newParent.AddCopy(newChild);
+            }
+
+            return root;
+        }
+
+        /// <summary>
         /// Сохраняет дерево, корнем которого является этот узел, как таблицу со столбцами "Name", "Address", разделенными символом ";", в файл CSV. Этих столбцов достаточно, чтобы описать узел, т.к. Address узла содержит Address его родителя. Потомки этого узла должны быть правильными. 
         /// </summary>
         /// <param name="path">Путь к файлу, в который будет сохранено дерево.</param>

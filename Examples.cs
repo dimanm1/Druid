@@ -963,6 +963,47 @@ class Program
         }
         #endregion
 
+        #region Load from List<Node>
+        {
+            //Node fileManager = new Node("root")
+            //.Add(new Node(".NET")
+            //    .Add(new Node("C#"))
+            //    .Add(new Node("LINQ")
+            //        .Add(new Node("Select"))))
+            //.Add(new Node("DB"))
+            //.Add(new Node("Верстка"));
+
+
+
+            //List<Node> treeNodes = new List<Node>
+            //{
+            //    new Node("root","0"),
+            //    new Node("a","0,0"),
+            //    new Node("b","0,1"),
+            //    new Node("c","0,1,0"),
+            //    new Node("d","0,1,1"),
+            //    new Node("e","0,1,1,0"),
+            //    new Node("f","0,1,1,1"),
+            //    new Node("g","0,1,2"),
+            //    new Node("h","0,2")
+            //};
+
+            //Node tree = new Node("tree").Load(treeNodes);
+
+            //Console.WriteLine(tree.ToString(x => $"{x.AddressAsString} {x.Name}"));
+
+            ////■ 0 root
+            ////├─■ 0,0 a
+            ////├─■ 0,1 b
+            ////│ ├─■ 0,1,0 c
+            ////│ ├─■ 0,1,1 d
+            ////│ │ ├─■ 0,1,1,0 e
+            ////│ │ └─■ 0,1,1,1 f
+            ////│ └─■ 0,1,2 g
+            ////└─■ 0,2 h
+        }
+        #endregion
+
         #region Search(), поиск по одному слову.
         {
             //Node boxes = new Node("boxes")
