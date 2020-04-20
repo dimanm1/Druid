@@ -40,5 +40,6 @@ Console.WriteLine(tree.ToString(x => $"({x.AddressAsString}) {x.Name}"))
 MIT
 ***
 Copyright © 2020 Dmitry Myagkov.
-
 Icon made by Fasil from www.freeicons.io
+
+dimitry.myagkov@yandex.ru
